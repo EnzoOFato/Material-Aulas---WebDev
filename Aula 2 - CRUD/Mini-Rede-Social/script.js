@@ -18,3 +18,53 @@ let posts = [
         date: "12/10/2023 12:00:00"
     }
 ];
+
+window.onload = function(){
+    mostraPost()
+    document.querySelector("#postForm").addEventListener("submit", addPost)
+}
+
+// Create
+function addPost(event){
+    event.preventDefault()
+    const textPost = document.querySelector("#postText").value
+    const categoriaPost = document.querySelector("#postCategory").value
+    const imagePost = document.querySelector("#postImage").value
+
+    const novoPost = {
+        text: textPost,
+        category: categoriaPost,
+        image: imagePost,
+        date: new Date().toLocaleString()
+    }
+
+    posts.unshift(novoPost)
+    mostraPost()
+}
+// Read
+function mostraPost(){
+    const listaPostagens = document.querySelector("#postList")
+    listaPostagens.innerHTML = ""
+
+    posts.forEach(post => {
+        const cardPost = document.createElement("div")
+        cardPost.classList.add("card")
+
+        cardPost.innerHTML = `
+            <h2>${post.text}</h2>
+            <img src="${post.image}">
+            <p>Categoria: ${post.category}</p>
+            <p>Data e Hora: ${post.date}</p>
+            <span><button>Editar</button><button>Apagar</button></span>
+        `
+        listaPostagens.append(cardPost)
+    })
+}
+// Update
+function uptPost(){
+
+}
+// Delete
+function apagaPost(){
+
+}
