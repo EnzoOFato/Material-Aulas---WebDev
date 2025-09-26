@@ -14,6 +14,7 @@ export default function PostUsuarios(){
 
     return (
         <div className="w-auto h-auto flex flex-col justify-center items-center gap-10">
+            <h1 className="text-3xl font-bold">Posts do Usuario</h1>
             {posts.map((pegaItem) => (
                 <h1 className="text-xl bg-gray-300 w-full">Titulo: {pegaItem.title}</h1>
             ))}
