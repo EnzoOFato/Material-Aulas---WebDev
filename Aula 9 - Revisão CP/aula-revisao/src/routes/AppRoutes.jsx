@@ -4,7 +4,7 @@ import Contact from "../pages/Contact"
 import About from "../pages/About"
 import App from "../App"
 
-export  const router = createBrowserRouter([
+export const router = createBrowserRouter([
     {
         path: "/",
         element: <App/>,

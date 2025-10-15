@@ -15,15 +15,13 @@ export default function Home() {
       setReactRep(data.items)})
   }, [])
 
-
-
   return (
     <div>
       <h1 className="text-3xl font-bold text-center mb-8">GitHub Repositories Explorer</h1>
       <Section titulo="React">
         {
-          reactRep.map(pegaItem => (
-            <Card {...pegaItem}></Card>
+          reactRep.map(item => (
+            <Card {...item}></Card>
           ))
         }
       </Section>
